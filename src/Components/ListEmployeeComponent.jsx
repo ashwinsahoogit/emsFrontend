@@ -3,6 +3,7 @@ import React,{useState,useEffect} from 'react'
 import { deleteEmployee, listEmployees } from '../Services/EmployeeService'
 import { useNavigate } from 'react-router-dom'
 
+
 const ListEmployeeComponent = () => {
 
     const [employees,setEmployees] = useState([])
@@ -45,7 +46,7 @@ const ListEmployeeComponent = () => {
     <div className='container-fluid'>
 
         <h2 className='text-center'>List of Employees</h2>
-        <button className='btn btn-outline-secondary mb-2' onClick={addNewEmployee}>Add Employee</button>
+        <button className='btn btn-lg btn-outline-secondary mb-2' onClick={addNewEmployee}><i className="bi bi-patch-plus"></i>Add Employee</button>
         <table className='table table-dark table-bordered'>
             <thead>
                 <tr>
@@ -65,9 +66,9 @@ const ListEmployeeComponent = () => {
                                 <td>{employee.lastName}</td>
                                 <td>{employee.email}</td>
                                 <td>
-                                    <button className='btn btn-outline-primary' onClick={() => updateEmployee(employee.id)}>Update</button>
+                                    <button className='btn btn-outline-primary' onClick={() => updateEmployee(employee.id)}><i className="bi bi-arrow-repeat"></i>Update</button>
                                     <button className='btn btn-outline-danger' onClick={() => removeEmployee(employee.id)}
-                                    style={{marginLeft:'10px'}}>
+                                    style={{marginLeft:'10px'}}><i className="bi bi-trash3"></i>
                                         Delete</button>
                                 </td>
                             </tr>)
